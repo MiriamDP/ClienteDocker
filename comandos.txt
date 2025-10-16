@@ -1,0 +1,31 @@
+📘 Guía de uso de Angular y React en contenedores Docker
+🔹 1. Angular (versiones 16–20)
+🚀 Proyecto nuevo (forma clásica)
+# docker exec -it angular17 bash       # entrar al contenedor (ejemplo Angular 17)
+# ng new mi-app                      # generar el proyecto en una nueva carpeta
+# cd mi-app
+# ng serve --host 0.0.0.0            # levantar servidor
+
+📂 Proyecto existente
+# docker exec -it angular17 bash       # entrar al contenedor
+# cd mi-app                          # entrar a la carpeta del proyecto
+# npm install                        # instalar dependencias si falta node_modules
+# ng serve --host 0.0.0.0            # levantar servidor
+o 
+# ng-serve                              # con el álias
+
+🔹 2. React 19
+🚀 Proyecto nuevo
+# docker exec -it react19 bash
+# npm create vite@latest mi-app
+# cd mi-app
+# npm install
+# npm run dev -- --host 0.0.0.0
+
+📂 Proyecto existente
+# docker exec -it react19 bash
+# cd mi-app
+# npm install                           # solo si falta node_modules
+# npm run dev -- --host 0.0.0.0
+o 
+# react-start                           # con el álias

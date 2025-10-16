@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 04 – textContent, innerText e innerHTML</title>
+    <link rel="icon" href="../../img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script defer src="./js/script.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h3>Ejemplos – FUNDAMENTOS DE JS (ES6)</h3>
+            <h4>Desarrollo WEB en entorno cliente</h4>
+            <h2>Ejercicio 04 – textContent, innerText e innerHTML</h2>
+        </div>
+        <div class="header-profile">
+            <img src="../../img/user.png" alt="Foto de perfil">
+        </div>
+    </header>
+
+    <nav>
+        <ul class="navbar">
+            <li><a href="https://www.w3schools.com/js/default.asp">w3schools</a></li>
+            <li><a href="https://es.javascript.info/js">javascript.info</a></li>
+            <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript">MDN</a></li>
+
+        </ul>
+    </nav>
+
+    <main>
+        <div class="container">
+            <div class="card">
+                <div class="cardTitle">Leer y modificar contenido con textContent, innerText e innerHTML</div>
+                <div class="cardBody">
+                    <button id="btnLeer">Leer contenido</button>
+                    <button id="btnModificar">Modificar contenido</button>
+
+                    <div id="caja">
+                        <h3>Mensaje original</h3>
+                        <p class="parrafo">Este <b>texto</b> tiene <span style="display:none">contenido oculto</span> y
+                            <i>HTML</i>.
+                        </p>
+                    </div>
+
+                    <div id="resultado"></div>
+                </div>
+                <div class="cardFooter">
+                    <a href="../../index.html">&gt;&gt; Página principal</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        © José García ☺
+    </footer>
+</body>
+
+</html>

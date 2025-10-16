@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Comparativa localStorage</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <script defer src="./js/indexedDBOpen.js"></script>
+    <script defer src="./js/indexedDBSave.js"></script>
+    <script defer src="./js/indexedDBRead.js"></script>
+    <script defer src="./js/indexedDBDelete.js"></script>
+    <script defer src="./js/script.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>💾 Uso de IndexedDB</h1>
+    </header>
+
+    <main>
+        <h2>📦 Guardamos el usuario y su imagen</h2>
+
+        <div class="formulario-con-resultado">
+            <!-- Formulario -->
+            <div class="formulario">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre"><br><br>
+
+                <label for="usuario">Usuario:</label>
+                <input type="text" id="usuario"><br><br>
+
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password"><br><br>
+
+                <!-- Campo de imagen -->
+                <label for="imagen">Imagen:</label>
+                <input type="file" id="imagen" accept="image/*"><br><br>
+
+                <button id="guardar">Guardar</button>
+                <button id="borrar">Borrar</button>
+            </div>
+
+            <!-- Resultado -->
+            <div id="resultado" class="resultado"></div>
+        </div>
+    </main>
+</body>
+
+</html>

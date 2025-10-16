@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 07 – parentNode, childNodes, firstChild, lastChild, nextSibling, previousSibling</title>
+    <link rel="icon" href="../../img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script defer src="./js/script.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h3>Ejemplos – FUNDAMENTOS DE JS (ES6)</h3>
+            <h4>Desarrollo WEB en entorno cliente</h4>
+            <h2>Ejercicio 07 – parentNode, childNodes, firstChild, lastChild, nextSibling, previousSibling</h2>
+        </div>
+        <div class="header-profile">
+            <img src="../../img/user.png" alt="Foto de perfil">
+        </div>
+    </header>
+
+    <nav>
+        <ul class="navbar">
+            <li><a href="https://www.w3schools.com/js/default.asp">w3schools</a></li>
+            <li><a href="https://es.javascript.info/js">javascript.info</a></li>
+            <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript">MDN</a></li>
+
+        </ul>
+    </nav>
+
+    <main>
+        <div class="container">
+            <div class="card">
+                <div class="cardTitle">Navegación entre nodos del DOM</div>
+                <div class="cardBody">
+                    <ul id="listaNombres">
+                        <li>Elemento 1</li>
+                        <li id="elementoActual">Elemento 2 (actual)</li>
+                        <li>Elemento 3</li>
+                    </ul>
+
+                    <button id="verPadre">Mostrar nodo padre</button><br>
+                    <button id="verHijos">Mostrar hijos del padre</button><br>
+                    <button id="verAnterior">Mostrar hermano anterior (previousSibling)</button>
+                    <button id="verAnteriorElemento">Hermano anterior (previousElementSibling)</button><br>
+                    <button id="verSiguiente">Mostrar hermano siguiente (nextSibling)</button>
+                    <button id="verSiguienteElemento">Hermano siguiente (nextElementSibling)</button>
+
+                    <div id="resultado"></div>
+                </div>
+                <div class="cardFooter">
+                    <a href="../../index.html">&gt;&gt; Página principal</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        © José García ☺
+    </footer>
+</body>
+
+</html>

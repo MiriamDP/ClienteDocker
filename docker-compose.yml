@@ -1,0 +1,162 @@
+version: "3.9"
+
+services:
+  # ************************* DESARROLLO ANGULAR *************************
+  angular16:
+    build: ./angular16
+    container_name: angular16
+    working_dir: /usr/src/app
+    volumes:
+      - ./angular16:/usr/src/app
+    ports:
+      - "4216:4200"
+    tty: true
+    stdin_open: true
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+
+  angular17:
+    build: ./angular17
+    container_name: angular17
+    working_dir: /usr/src/app
+    volumes:
+      - ./angular17:/usr/src/app
+    ports:
+      - "4217:4200"
+    tty: true
+    stdin_open: true
+    environment:
+      - CHOKIDAR_USEPOLLING=true  # Sustituye al parámetro: --poll 500, en el comando: ng serve
+
+  angular18:
+    build: ./angular18
+    container_name: angular18
+    working_dir: /usr/src/app
+    volumes:
+      - ./angular18:/usr/src/app
+    ports:
+      - "4218:4200"
+    tty: true
+    stdin_open: true
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+
+  angular19:
+    build: ./angular19
+    container_name: angular19
+    working_dir: /usr/src/app
+    volumes:
+      - ./angular19:/usr/src/app
+    ports:
+      - "4219:4200"
+    tty: true
+    stdin_open: true
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+
+  angular20:
+    build: ./angular20
+    container_name: angular20
+    working_dir: /usr/src/app
+    volumes:
+      - ./angular20:/usr/src/app
+    ports:
+      - "4220:4200"
+    tty: true
+    stdin_open: true
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+
+  # ************************* DESARROLLO REACT *************************
+  react19:
+    build: ./react19
+    container_name: react19
+    working_dir: /usr/src/app
+    volumes:
+      - ./react19:/usr/src/app
+    ports:
+      - "4319:5173"
+    tty: true
+    stdin_open: true
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+
+  # ***************************** SERVICIOS *****************************
+  # Servicio para servir builds Angular (producción)
+  angular-app:
+    image: nginx:alpine
+    container_name: angular-app
+    volumes:
+      - ./angular-app/dist:/usr/share/nginx/html
+      - ./nginx-angular.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - "4200:80"
+
+  # Servicio para servir JS Vanilla con listado de directorios
+  static-files:
+    image: nginx:alpine
+    container_name: static-files
+    volumes:
+      - ./vanilla-sites:/usr/share/nginx/html
+      - ./nginx-vanilla.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - "4300:80"
+
+  # API PHP
+  php-api:
+    build:
+      context: ./php-app
+      dockerfile: Dockerfile
+    volumes:
+      - ./php-app:/var/www/html
+    ports:
+      - "8080:80"
+
+  # API Flask
+  flask-api:
+    build: ./python-app
+    volumes:
+      - ./python-app:/app
+    ports:
+      - "5001:5000"
+    environment:
+      FLASK_APP: app.py
+      FLASK_ENV: development
+
+  # API Node.js
+  nodejs-api:
+    image: node:18-alpine
+    volumes:
+      - ./nodejs-app:/app
+    working_dir: /app
+    command: sh -c "npm install && npm start"
+    ports:
+      - "3000:3000"
+
+  # Base de datos MySQL
+  mysql-db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: dejame
+    volumes:
+      - ./db/dbzDB.sql:/docker-entrypoint-initdb.d/dbzDB.sql
+      - mysql_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+  # phpMyAdmin
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      PMA_HOST: mysql-db
+      PMA_USER: root
+      PMA_PASSWORD: dejame
+    ports:
+      - "8081:80"
+
+networks:
+  default:
+    name: shared_network
+
+volumes:
+  mysql_data:

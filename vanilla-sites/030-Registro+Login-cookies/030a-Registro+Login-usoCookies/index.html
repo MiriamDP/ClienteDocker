@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>030a-Registro+Login-acceso</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <script defer src="./js/cookies.js"></script>
+    <script defer src="./js/mensaje.js"></script>
+    <script defer src="./js/script.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Bloque 1 – Mostrar/Ocultar elementos y uso de Cookies</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>🎯 Mostrar y ocultar elementos</h2>
+            <p>Pulsa los botones para mostrar u ocultar el mensaje oculto.</p>
+            <button id="mostrarBtn">Mostrar mensaje</button>
+            <button id="ocultarBtn">Ocultar mensaje</button>
+
+            <div id="mensaje" style="display: none; margin-top: 20px;">
+                🎉 ¡Hola! Este mensaje estaba oculto y ahora es visible.
+            </div>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>🍪 Uso básico de Cookies</h2>
+            <p>Vamos a guardar, leer y borrar cookies.</p>
+            <input type="text" id="clave" placeholder="Introduce la clave ">&nbsp;&nbsp;
+            <input type="text" id="valor" placeholder="Introduce el valor valor"><br />
+            <button id="guardarCookieMaxAge">Guardar cookie (max-age)</button>
+            <button id="guardarCookieExpires">Guardar cookie (expires)</button>
+            <button id="guardarCookieNoCaduca">Guardar cookie (no caduca)</button>
+            <br />
+            <button id="leerCookies">Leer cookie</button>
+            <button id="borrarCookie">Borrar cookie</button>
+
+            <div id="resultado" style="margin-top: 20px;"></div>
+        </section>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+body {
+    font-family: sans-serif;
+    margin: 2em;
+    background-color: #f9f9f9;
+    line-height: 1.6;
+}
+
+button {
+    margin: 5px 10px 5px 0;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+#mensaje {
+    background-color: #e0f7fa;
+    padding: 1em;
+    border: 1px solid #4dd0e1;
+    font-weight: bold;
+}
+
+/* === NUEVO: contenedor de formulario + resultado lado a lado === */
+.formulario-con-resultado {
+    display: flex;
+    gap: 20px;              /* espacio entre formulario y resultado */
+    align-items: flex-start; /* alinear arriba ambos bloques */
+}
+
+/* bloque de formulario */
+.formulario-con-resultado .formulario {
+    flex: 1;                /* ocupa el espacio necesario */
+}
+
+/* bloque de resultado */
+.formulario-con-resultado .resultado {
+    min-width: 220px;       /* ancho mínimo del panel lateral */
+    border: 1px solid #ccc;
+    background-color: #fff;
+    padding: 10px;
+    font-size: 0.9em;
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="La Plantilla en HTML5" />
+  <title>030d-Registro+Login-cookies-login</title>
+  <link rel="icon" type="image/x-icon" href="./img/favicon.ico" />
+  <link rel="stylesheet" href="./css/styles.css" />
+  <script src="./js/auth.js" defer></script>
+  <script src="./js/menu.js" defer></script>
+</head>
+
+<body>
+  <header class="header">
+    <div class="header-content">
+      <h3>Ejemplos – FUNDAMENTOS DE JS (ES6)</h3>
+      <h4>Desarrollo WEB en entorno cliente</h4>
+      <h2>Registro + Login (con cookies) [Formulario de Inicio de sesión]</h2>
+    </div>
+    <div class="header-profile">
+      <img src="./img/user.png" alt="Foto de perfil">
+    </div>
+  </header>
+  <nav>
+    <ul class="navbar">
+      <!-- Enlaces públicos (siempre visibles) -->
+      <li><a href="https://www.w3schools.com/js/default.asp">w3schools</a></li>
+      <li><a href="https://es.javascript.info/js">javascript.info</a></li>
+      <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript">MDN</a></li>
+
+      <!-- Enlaces privados (DOM) ocultos por defecto -->
+      <li class="dropdown enlacePrivado" style="display: none;">
+        <a href="#">DOM</a>
+        <ul class="dropdown-content">
+          <li><a href="./ejercicios/DOM/ejer01/index.html">getElementById()</a></li>
+          <li><a href="./ejercicios/DOM/ejer02/index.html">getElementsByClassName()-TagName()</a></li>
+          <li><a href="./ejercicios/DOM/ejer03/index.html">querySelector()-SelectorAll()</a></li>
+          <li><a href="./ejercicios/DOM/ejer04/index.html">textContent-innerText-innerHTML</a></li>
+          <li><a href="./ejercicios/DOM/ejer05/index.html">createElement()-append-removeChild()</a></li>
+          <li><a href="./ejercicios/DOM/ejer06/index.html">add-removeEventListener()</a></li>
+          <li><a href="./ejercicios/DOM/ejer07/index.html">Node-Child-Sibling</a></li>
+        </ul>
+      </li>
+      <li class="dropdown enlacePrivado" style="display: none;">
+        <a href="#">Acceso</a>
+        <ul class="dropdown-content">
+          <li><a href="./ejercicios/Acceso/mostrarOcultar/index.html">MostrarOcultar</a></li>
+          <li><a href="./ejercicios/Acceso/cookies/index.html">Cookies</a></li>
+        </ul>
+      </li>
+
+      <!-- Enlaces Registro/Login (cuando no hay sesión) -->
+      <li class="enlacePublico derecha"><a href="./registro.html">Registro</a></li>
+      <li class="enlacePublico "><a href="./login.html">Login</a></li>
+
+      <!-- Usuario y logout (cuando hay sesión) -->
+      <li class="enlacePrivado derecha" id="usuarioSesion" style="display: none;"></li>
+      <li class="enlacePrivado" id="cerrarSesion" style="display: none;"><a href="#">Cerrar sesión</a></li>
+
+    </ul>
+  </nav>
+
+  <main>
+    <section class="intro">
+      <h2>Bienvenido</h2>
+      <p>Selecciona un ejercicio desde el menú superior para empezar.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    © José García ☺
+  </footer>
+
+</body>
+
+</html>

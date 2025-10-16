@@ -1,0 +1,19 @@
+body {
+    font-family: sans-serif;
+    margin: 2em;
+    background-color: #f9f9f9;
+    line-height: 1.6;
+}
+
+button {
+    margin: 5px 10px 5px 0;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+#mensaje {
+    background-color: #e0f7fa;
+    padding: 1em;
+    border: 1px solid #4dd0e1;
+    font-weight: bold;
+}
