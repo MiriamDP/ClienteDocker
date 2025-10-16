@@ -2,15 +2,15 @@
 
 let db;
 
-function abrirBaseDatos() {
+function abrirBaseDatos() { //las funciones que se llaman con await implementan promesas
     return new Promise((resolve, reject) => {
-        const request = indexedDB.open("UsuariosDB", 1);
+        const request = indexedDB.open("UsuariosDB", 1); //1 indica la version, guarda el manejador de la base de datos, 1 podria ser una variable
 
-        request.onupgradeneeded = (event) => {
-            db = event.target.result;
+        request.onupgradeneeded = (event) => { //compara la version interna con la de request, sino existe la bd la version es 0
+            db = event.target.result; //db es un puntero a la base de datos
             if (!db.objectStoreNames.contains("usuarios")) {
-                const store = db.createObjectStore("usuarios", { keyPath: "usuario" });
-                store.createIndex("nombre", "nombre", { unique: false });
+                const store = db.createObjectStore("usuarios", { keyPath: "usuario" }); //crea dentro del objeto crear la tabla usuarios
+                store.createIndex("nombre", "nombre", { unique: false }); //el primer nombre debe estar relacionado con el objeto que estamos guardando
             }
         };
 

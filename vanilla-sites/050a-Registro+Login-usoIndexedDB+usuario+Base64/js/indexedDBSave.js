@@ -2,13 +2,14 @@
 
 async function guardarUsuarioIndexedDB(user) {
     try {
+        limpiarResultado() //seria lo suyo hacerlo para evitar posibles incosistencias
 
         if (!db) await abrirBaseDatos();
 
         return new Promise((resolve, reject) => {
-            const transaction = db.transaction("usuarios", "readwrite");
-            const store = transaction.objectStore("usuarios");
-            const requestEscribir = store.put(user); // Inserta o actualiza
+            const transaction = db.transaction("usuarios", "readwrite"); //operacion a realizar sobre la base de datos
+            const store = transaction.objectStore("usuarios"); //store es la tabla
+            const requestEscribir = store.put(user); // Inserta o actualiza //esta es la operacion resultante
 
             requestEscribir.onsuccess = () => {
                 console.log(`✅ Usuario '${user.usuario}' guardado correctamente.`);

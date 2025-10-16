@@ -20,7 +20,7 @@ async function mostrarUsuariosIndexedDB() {
                 }
 
                 resultado.innerHTML = "<h3>Usuarios guardados:</h3>";
-                for (const user of usuarios) {
+                for (const user of usuarios) { //array //in para objetos
                     resultado.innerHTML += `
                     <div style="margin-bottom:10px;">
                         ${user.imagen ? `<img src="${user.imagen}" width="30" style="border-radius:8px;">` : "👤"} 
